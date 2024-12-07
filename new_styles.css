@@ -1,0 +1,512 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Garamond', serif;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: #ffffff;
+    opacity: 0; /* Initially invisible */
+    background-color: transparent;
+    transition: opacity 1.5s ease, background-color 1.5s ease; /* Smooth dissolve effect */
+}
+
+/* Background colors for each section */
+#page1 { 
+    background-image: url('https://assets.editorial.aetnd.com/uploads/2009/11/slavery-in-america-gettyimages-464757479.jpg');
+    background-size: cover;
+    h1 {
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        text-align: center;
+      }
+    p{
+        text-shadow: 3px 2px 5px black
+    }
+    position: relative; 
+    
+}
+
+#page1::after {
+    content: ''; /* Create the pseudo-element */
+    position: absolute;
+    bottom: 0; /* Position it at the bottom */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Height of the gradient shadow */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%); /* Gradient shadow */
+    pointer-events: none; /* Ensure it doesn’t block interactions */
+}   
+
+#page2 { 
+    background-color: #282626; 
+   
+    h1{
+        color: white;
+        font-size: 45px;
+        text-shadow: 2px 2px 4px #000000;
+
+    }
+    p{
+        font-size: 30px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+#page2 h1 {
+    position: relative;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* Create lines using pseudo-elements */
+#page2 h1::before,
+#page2 h1::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Vertically center the lines */
+    height: 2px;
+    background-color: #fff;
+    transition: all 3s ease;
+}
+
+/* Left line initially starts just at the left edge of the header */
+#page2 h1::before {
+    left: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Right line initially starts just at the right edge of the header */
+#page2 h1::after {
+    right: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Animation Trigger (when the page section is in view) */
+#page2.animate h1::before {
+    width: 50%; /* Line grows outward */
+    left: -60%; /* Move line further left */
+}
+
+#page2.animate h1::after {
+    width: 50%; /* Line grows outward */
+    right: -60%; /* Move line further right */
+}
+
+/* Optional: Animation timing for when it triggers */
+@keyframes lineAnimation {
+    0% {
+        width: 0;
+        left: 0;
+        right: 0;
+    }
+    100% {
+        width: 60%;
+        left: -60%;
+        right: -60%;
+    }
+}
+
+#page3 { 
+    background-color: #282626; 
+    h1{
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 45px;
+        text-align: center;
+    }
+    
+}
+#page4 {
+    background-color:#282626 ;
+    p{
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 40px;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+        
+    }
+}
+#page5 h1 {
+    position: relative;
+    font-size: 3em;
+    text-align: center;
+}
+
+/* Create lines using pseudo-elements */
+#page5 h1::before,
+#page5 h1::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Vertically center the lines */
+    height: 2px;
+    background-color: #fff;
+    transition: all 3s ease;
+}
+
+/* Left line initially starts just at the left edge of the header */
+#page5 h1::before {
+    left: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Right line initially starts just at the right edge of the header */
+#page5 h1::after {
+    right: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Animation Trigger (when the page section is in view) */
+#page5.animate h1::before {
+    width: 50%; /* Line grows outward */
+    left: -60%; /* Move line further left */
+}
+
+#page5.animate h1::after {
+    width: 50%; /* Line grows outward */
+    right: -60%; /* Move line further right */
+}
+
+/* Optional: Animation timing for when it triggers */
+@keyframes lineAnimation {
+    0% {
+        width: 0;
+        left: 0;
+        right: 0;
+    }
+    100% {
+        width: 60%;
+        left: -60%;
+        right: -60%;
+    }
+}
+
+#page5 { 
+    background-color: #282626;
+    h1{
+        color: white;
+        font-size: 50px;
+        text-shadow: 2px 2px 4px #000000;
+
+    }
+    p{
+        font-size: 30px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+ }
+#page5 { background-color: #282626; }
+#page6 { 
+    background-color: #282626;
+    background-color:#282626 ;
+    p{
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 40px;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+ }
+#page7 { 
+    background-color: #282626; 
+    background-color: #282626;
+    background-color:#282626 ;
+    p{
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 40px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+#page8 { 
+    background-color: #282626;
+    h1{
+        color: white;
+        font-size: 45px;
+        text-shadow: 2px 2px 4px #000000;
+
+    }
+    p{
+        font-size: 35px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+ }
+#page8 h1 {
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* Create lines using pseudo-elements */
+#page8 h1::before,
+#page8 h1::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Vertically center the lines */
+    height: 2px;
+    background-color: #fff;
+    transition: all 3s ease;
+}
+
+/* Left line initially starts just at the left edge of the header */
+#page8 h1::before {
+    left: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Right line initially starts just at the right edge of the header */
+#page8 h1::after {
+    right: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Animation Trigger (when the page section is in view) */
+#page8.animate h1::before {
+    width: 50%; /* Line grows outward */
+    left: -60%; /* Move line further left */
+}
+
+#page8.animate h1::after {
+    width: 50%; /* Line grows outward */
+    right: -60%; /* Move line further right */
+}
+
+/* Optional: Animation timing for when it triggers */
+@keyframes lineAnimation {
+    0% {
+        width: 0;
+        left: 0;
+        right: 0;
+    }
+    100% {
+        width: 60%;
+        left: -60%;
+        right: -60%;
+    }
+}
+
+#page9 { 
+    background-color: #282626; 
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    p{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+#page10 { 
+    background-color: #282626;
+    text-align: justify; 
+    p{
+        margin-left: 50px;
+        margin-right: 50px;
+
+    }}
+#page11 { 
+    background-color: #282626;
+    
+    
+    h1{
+        margin-left: 50px;
+        margin-right: 50px; 
+        text-shadow: 2px 2px 4px #000000;
+        text-align: center;
+        font-size: 50px
+    }
+    }
+#page12 { 
+    background-color: #282626;
+    p{ margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+    }
+     }
+#page13 { 
+    background-color: #282626;
+    h1{
+        font-size: 50px;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+
+    } }
+#page14 { 
+    background-color: #282626;
+    p{
+        margin-left: 50px;
+        margin-right: 50px;
+        text-align: justify;}
+ }
+
+#page15 { 
+    background-color: #282626; 
+   
+    h1{
+        color: white;
+        font-size: 45px;
+        text-shadow: 2px 2px 4px #000000;
+
+    }
+    p{
+        font-size: 30px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+#page15 h1 {
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* Create lines using pseudo-elements */
+#page15 h1::before,
+#page15 h1::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Vertically center the lines */
+    height: 2px;
+    background-color: #fff;
+    transition: all 3s ease;
+}
+
+/* Left line initially starts just at the left edge of the header */
+#page15 h1::before {
+    left: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Right line initially starts just at the right edge of the header */
+#page15 h1::after {
+    right: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Animation Trigger (when the page section is in view) */
+#page15.animate h1::before {
+    width: 50%; /* Line grows outward */
+    left: -60%; /* Move line further left */
+}
+
+#page15.animate h1::after {
+    width: 50%; /* Line grows outward */
+    right: -60%; /* Move line further right */
+}
+
+/* Optional: Animation timing for when it triggers */
+@keyframes lineAnimation {
+    0% {
+        width: 0;
+        left: 0;
+        right: 0;
+    }
+    100% {
+        width: 60%;
+        left: -60%;
+        right: -60%;
+    }
+}
+iframe {
+    max-width: 100%;
+    border-radius: 10px; /* Optional styling for rounded corners */
+}
+#page16{
+    background-color: #282626;
+    p{ font-size: 30px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    
+    }
+}
+#page17 { 
+    background-color: #282626; 
+   
+    h1{
+        color: white;
+        font-size: 45px;
+        text-shadow: 2px 2px 4px #000000;
+
+    }
+    p{
+        font-size: 30px;
+        text-align: justify;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+#page17 h1 {
+    position: relative;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* Create lines using pseudo-elements */
+#page17 h1::before,
+#page17 h1::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Vertically center the lines */
+    height: 2px;
+    background-color: #fff;
+    transition: all 3s ease;
+}
+
+/* Left line initially starts just at the left edge of the header */
+#page17 h1::before {
+    left: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Right line initially starts just at the right edge of the header */
+#page17 h1::after {
+    right: 20;
+    width: 0; /* Line starts at zero width */
+}
+
+/* Animation Trigger (when the page section is in view) */
+#page17.animate h1::before {
+    width: 50%; /* Line grows outward */
+    left: -60%; /* Move line further left */
+}
+
+#page17.animate h1::after {
+    width: 50%; /* Line grows outward */
+    right: -60%; /* Move line further right */
+}
+
+/* Optional: Animation timing for when it triggers */
+@keyframes lineAnimation {
+    0% {
+        width: 0;
+        left: 0;
+        right: 0;
+    }
+    100% {
+        width: 60%;
+        left: -60%;
+        right: -60%;
+    }
+}
+#page18 { background-color: #282626; }
+#page19 { background-color: #282626; }
+
+
+/* When the section is visible */
+.section.visible {
+    opacity: 1; /* Make section visible */
+};
